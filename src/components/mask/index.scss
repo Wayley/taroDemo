@@ -1,0 +1,16 @@
+@mixin fixed() {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.mask {
+  @include fixed();
+  // background: rgba(0, 0, 0, 0.6);
+  background: #000;
+}
+.mask_transparent {
+  @include fixed();
+}

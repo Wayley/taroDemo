@@ -1,15 +1,19 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import PropTypes from 'prop-types'
+import Mask from '../../components/mask'
+
 import './index.scss'
 
 class GoodsList extends Component {
   static propTypes = {
-    list: PropTypes.array
+    show: PropTypes.bool,
+    title: PropTypes.string,
+    btns: PropTypes.array
   }
 
   static defaultProps = {
-    list: []
+    show: false
   }
 
   gotoDetail = e => {
@@ -19,21 +23,18 @@ class GoodsList extends Component {
   }
 
   render() {
-    const { list } = this.props
-
+    const { show } = this.props
     return (
-      <View className='dialog'>
-        {list.length > 0 ? (
-          <View className='dialog-list'>
-            {list.map((item, index) => (
-              <Text key={index}>
-                {index}--{item}
-              </Text>
-            ))}
+      <View>
+        <Mask show={show} className='mmm' />
+        <View className='dialog' style={{ display: show ? 'block' : 'none' }}>
+          <View className='dialog-title'>这是标题</View>
+          <View className='dialog-content'>内容</View>
+          <View className='dialog-footer'>
+            <View className='dialog-btn'>取消</View>
+            <View className='dialog-btn'>取消</View>
           </View>
-        ) : (
-          <Text>暂无数据</Text>
-        )}
+        </View>
       </View>
     )
   }
