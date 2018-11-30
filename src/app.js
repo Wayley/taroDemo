@@ -10,33 +10,47 @@ import './app.scss'
 // }
 
 class App extends Component {
-
   config = {
-    pages: [
-      'pages/index/index'
-    ],
+    pages: ['pages/index/index', 'pages/my/index'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      color: '#cccccc',
+      selectedColor: '#E73030',
+      backgroundColor: '#ffffff',
+      list: [
+        {
+          pagePath: 'pages/index/index',
+          text: '首页'
+          // iconPath: '',
+          // selectedIconPath: ''
+        },
+        {
+          pagePath: 'pages/my/index',
+          text: '我的'
+          // iconPath: '',
+          // selectedIconPath: ''
+        }
+      ]
     }
   }
 
-  componentDidMount () {}
+  componentDidMount() {}
 
-  componentDidShow () {}
+  componentDidShow() {}
 
-  componentDidHide () {}
+  componentDidHide() {}
 
-  componentDidCatchError () {}
+  componentDidCatchError() {}
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
-    return (
-      <Index />
-    )
+  render() {
+    return <Index />
   }
 }
 
