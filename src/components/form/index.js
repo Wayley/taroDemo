@@ -1,14 +1,16 @@
 import Taro, { Component } from '@tarojs/taro'
 import { Form } from '@tarojs/components'
+import { isFunction } from '../../utils/index'
+
 import './index.scss'
 
 class UcForm extends Component {
   formSubmit = e => {
-    console.log(e)
+    isFunction(this.props.onSubmit) && this.props.onSubmit(e.detail)
   }
 
   formReset = e => {
-    console.log(e)
+    isFunction(this.props.onReset) && this.props.onReset(e.detail)
   }
 
   render() {

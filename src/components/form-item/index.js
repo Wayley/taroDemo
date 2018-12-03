@@ -1,7 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Icon } from '@tarojs/components'
-import PropTypes from 'prop-types'
-import { classNames } from '../../utils/index'
 
 import './index.scss'
 
