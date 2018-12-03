@@ -1,0 +1,17 @@
+@mixin fixed() {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.form {
+  background: #fff;
+  padding: 20px;
+  margin: 20px;
+  font-size: 30px;
+}
+.mask_transparent {
+  @include fixed();
+}
