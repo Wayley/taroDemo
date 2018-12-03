@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Input, Picker } from '@tarojs/components'
-import Form from '../../components/form'
+import UcForm from '../../components/form'
 import FormItem from '../../components/form-item'
 
 import './index.scss'
@@ -49,7 +49,7 @@ export default class Index extends Component {
     return (
       <View className='test'>
         <Text>test</Text>
-        <Form>
+        <UcForm>
           <FormItem label='姓名:' labelWidth='50'>
             <Input type='text' placeholder='请输入内容' />
           </FormItem>
@@ -61,6 +61,9 @@ export default class Index extends Component {
             >
               <View className='picker'>{this.state.selectorChecked}</View>
             </Picker>
+          </FormItem>
+          <FormItem label='卡号:' labelWidth='50' icon='warn'>
+            <Input type='text' placeholder='请输入卡号' />
           </FormItem>
           <FormItem label='时间:' labelWidth='50'>
             <Picker mode='time' onChange={this.onTimeChange}>
@@ -76,7 +79,7 @@ export default class Index extends Component {
               <View className='picker'>{this.state.dateSel}</View>
             </Picker>
           </FormItem>
-        </Form>
+        </UcForm>
       </View>
     )
   }
