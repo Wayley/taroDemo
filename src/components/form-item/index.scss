@@ -1,0 +1,13 @@
+.form-item {
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+  display: flex;
+}
+.form-item-label {
+}
+.form-item-content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
