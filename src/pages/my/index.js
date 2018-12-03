@@ -11,7 +11,7 @@ export default class Index extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      showDialog: true,
+      showDialog: false,
       title: '提示-',
       content: '',
       cancelName: '取消',

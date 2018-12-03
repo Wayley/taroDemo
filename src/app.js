@@ -11,7 +11,7 @@ import './app.scss'
 
 class App extends Component {
   config = {
-    pages: ['pages/index/index', 'pages/my/index'],
+    pages: ['pages/index/index', 'pages/test/index', 'pages/my/index'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
@@ -26,6 +26,12 @@ class App extends Component {
         {
           pagePath: 'pages/index/index',
           text: '首页'
+          // iconPath: '',
+          // selectedIconPath: ''
+        },
+        {
+          pagePath: 'pages/test/index',
+          text: '测试'
           // iconPath: '',
           // selectedIconPath: ''
         },
