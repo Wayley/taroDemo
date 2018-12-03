@@ -10,7 +10,13 @@ export default class Index extends Component {
   }
   constructor(props) {
     super(props)
-    this.state = { showDialog: true }
+    this.state = {
+      showDialog: true,
+      title: '提示-',
+      content: '',
+      cancelName: '取消',
+      confirmName: '确定'
+    }
   }
   componentWillMount() {}
 
@@ -23,16 +29,39 @@ export default class Index extends Component {
   componentDidHide() {}
 
   toggleDialog = e => {
-    console.log(e, '----')
+    e.stopPropagation()
     this.setState(prevState => ({
       showDialog: !prevState.showDialog
     }))
   }
+  dialogCancel = () => {
+    console.log('outer cancel')
+    this.setState({
+      showDialog: false
+    })
+  }
+  dialogOk = () => {
+    console.log('outer ok')
+    this.setState({
+      showDialog: false
+    })
+  }
   render() {
+    const { showDialog, title, cancelName, confirmName, content } = this.state
     return (
       <View className='index'>
         <Text>my</Text>
-        <Dialog show={this.state.showDialog} />
+        <Dialog
+          show={showDialog}
+          title={title}
+          cancelName={cancelName}
+          confirmName={confirmName}
+          onCancel={this.dialogCancel}
+          onConfirm={this.dialogOk}
+        >
+          {content}
+          <Text>222</Text>
+        </Dialog>
         <Button
           className='btn-max-w'
           plain
