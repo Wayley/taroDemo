@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text, Button } from '@tarojs/components'
+import { View, Text, Button, Input } from '@tarojs/components'
 import Dialog from '../../components/dialog'
 
 import './index.scss'
@@ -13,7 +13,7 @@ export default class Index extends Component {
     this.state = {
       showDialog: false,
       title: '提示-',
-      content: '',
+      content: '下面的content',
       cancelName: '取消',
       confirmName: '确定'
     }
@@ -46,6 +46,9 @@ export default class Index extends Component {
       showDialog: false
     })
   }
+  handle = (type, e) => {
+    console.log(type, e, '=-==')
+  }
   render() {
     const { showDialog, title, cancelName, confirmName, content } = this.state
     return (
@@ -54,14 +57,57 @@ export default class Index extends Component {
         <Dialog
           show={showDialog}
           title={title}
-          cancelName={cancelName}
-          confirmName={confirmName}
-          onCancel={this.dialogCancel}
+          // cancelName={cancelName}
+          // confirmName={confirmName}
+          // onCancel={this.dialogCancel}
           onConfirm={this.dialogOk}
         >
           {content}
           <Text>222</Text>
         </Dialog>
+        {/* <Dialog
+          show={showDialog}
+          title={title}
+          content='上面的content'
+          cancelName={cancelName}
+          confirmName={confirmName}
+          // onCancel={this.dialogCancel}
+          // onConfirm={this.dialogOk}
+          renderFooter={
+            <View style='display:flex'>
+              <View
+                className='dialog-btn'
+                onClick={this.handle.bind(this, 'bad')}
+              >
+                不好
+              </View>
+              <View
+                className='dialog-btn dialog-btn-ok'
+                onClick={this.handle.bind(this, 'ok')}
+              >
+                好的
+              </View>
+              <View
+                className='dialog-btn dialog-btn-ok'
+                onClick={this.handle.bind(this, 'other')}
+              >
+                其他
+              </View>
+            </View>
+          }
+        >
+          {content}
+          <Text>222</Text>
+          <View>
+            姓名：
+            <Input
+              value='wz'
+              placeholder='请输入名字'
+              style='background:#ececec'
+            />
+          </View>
+        </Dialog>
+         */}
         <Button
           className='btn-max-w'
           plain
